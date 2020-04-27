@@ -1,30 +1,20 @@
-import React,{ useState} from 'react';
+import React,{ Component } from 'react';
+import GlobalStyle from './styles/global'
 
-function App() {
+import { Container, Content} from './styles'
 
-  const [tech, setTech] = useState([
-    'ReactJs',
-    'React Native'
-  ])
+class App extends Component {
 
-  const [newTech, setNewTech] = useState('')
-
-  function handleAdd(){
-    setTech([...tech, newTech]);
-    setNewTech('');
+  render(){
+    return (
+      <Container>
+        <Content>
+          teste
+        </Content>
+        <GlobalStyle/>
+      </Container>
+    );
   }
-
-  return (
-    <>
-      <ul>
-        { tech.map(t => (
-          <li key={t}>{t}</li>
-        ))}
-      </ul>
-      <input type='text' value={newTech} onChange={e => setNewTech(e.target.value)}/>
-      <button type='button' onClick={handleAdd}>Adicionar</button>
-    </>
-  );
 }
 
 export default App;
